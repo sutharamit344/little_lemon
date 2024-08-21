@@ -1,0 +1,21 @@
+#nav-items{
+    list-style: none;
+    display: flex;
+    font-weight: bold;
+}
+
+.nav-link a{
+    padding: 1.5rem 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link a:hover{
+    background-color: #495E57;
+    color: white;
+}
+
+.active{
+    background-color: #495E57;
+    color: white;
+}

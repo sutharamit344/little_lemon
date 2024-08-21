@@ -1,0 +1,88 @@
+body{
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+h1{
+  font-size: 64px;
+}
+
+h2{
+  font-size: 44px;
+}
+
+p{
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.text-primary{
+  color: #495E57;
+}
+.text-secondary{
+  color: #F4CE14;
+}
+
+.btn-primary{
+  background-color: #495E57;
+  color: white;
+}
+.btn-secondary{
+  background-color: #F4CE14;
+  color: black;
+}
+
+.btn-primary:hover{
+  box-shadow: 1px 1px 4px #495E57;
+}
+.btn-secondary:hover{
+  box-shadow: 1px 1px 4px #F4CE14;
+}
+
+.btn{
+  padding: 2vmin 4vmin;
+  font-size: 18px;
+  border-radius: 1rem;
+  border: none;
+  font-weight: bold;
+}
+
+#root{
+  display: grid;
+  grid-template-rows: 1rf 1rf 1rf;;
+}
+
+.container{
+  width: 65%;
+  margin: auto
+}
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.footer-links ul{
+  list-style: none;
+}
+
+.footer-links a{
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+
+footer{
+  background-color: #495E57;
+}

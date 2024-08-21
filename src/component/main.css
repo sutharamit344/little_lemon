@@ -1,0 +1,35 @@
+#hero-section{
+background-color: #495E57;
+}
+
+#hero-section-content{
+    color: white;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#main-img{
+    display: flex;
+    justify-content: end;
+}
+
+#restaurentfoodimg{
+    overflow: hidden;
+    height: 70vmin;
+    width: 60vmin;
+    border-radius: 2rem;
+    position: absolute;
+}
+#restaurentfoodimg img{
+    width: 100%;
+}
+
+#highlight-section{
+    height: 80vmin;
+    margin-top: 20vmin;
+}
+#hilight-header{
+    display: flex;
+    justify-content: space-between;
+}
