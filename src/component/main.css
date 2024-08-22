@@ -1,10 +1,14 @@
-#hero-section{
+#hero-section,#testimonial_section{
 background-color: #495E57;
+color: white;
+}
+
+#hero-section-content,#highlight-section-content,#testimonial_content,#about_content{
+    padding: 2rem;
 }
 
 #hero-section-content{
-    color: white;
-    padding: 2rem;
+    margin-bottom: 8rem;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -25,11 +29,100 @@ background-color: #495E57;
     width: 100%;
 }
 
-#highlight-section{
-    height: 80vmin;
-    margin-top: 20vmin;
-}
-#hilight-header{
+
+#highlight-header{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.highlight_card{
+    width: 29%;
+    background-color: #EDEFEE;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px gray;
+    overflow: hidden;
+}
+
+.card_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_image{
+    width: 100%;
+    height: 10rem;
+    background-color: gray;
+    overflow: hidden;
+}
+
+.card_image img{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.highlight_card:hover img{
+    width: 110%;
+}
+
+
+.card_content{
+    margin: 1rem;
+}
+
+#highlight_content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_price{
+    color: red;
+}
+
+#testimonial{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.review_card{
+    width: 25vmin;
+    padding: 1rem;
+    background-color: #EDEFEE;
+    color: black;
+    border-radius: 1rem;
+}
+
+
+.review_card:hover{
+    box-shadow: 1px 1px 3px white;
+}
+
+.review_image{
+    width: 10vmin;
+}
+
+#about_content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#about_img{
+    display: flex;
+    justify-content: end;
+}
+
+.about_img{
+    overflow: hidden;
+    width: 12rem;
+    height: 15rem;
+    background-color: #495E57;
+    border-radius: 1rem;
+}
+
+.about_img img{
+    margin-left: -10rem;
+}
+
+#restaurentfoodimg1{
+    margin: 6rem -4rem 0 0;
 }

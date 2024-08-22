@@ -1,4 +1,7 @@
 import "./main.css"
+import Special from "./specials";
+import Testimonial from "./testimonial";
+import About from "./about";
 import restaurantFood from "../assets/img/restauranfood.jpg"
 
 export default function Homapage(){
@@ -12,6 +15,7 @@ export default function Homapage(){
                     <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
                     </p>
+                    <br></br>
                     <input type="button" value="Reserve a table" className="btn btn-secondary"/>
                 </div>
                 <div id="main-img">
@@ -21,14 +25,9 @@ export default function Homapage(){
                 </div>
             </div>
         </section>
-        <section id="highlight-section">
-        <div id="highlight-section-content" className="container">
-            <div id="hilight-header">
-                <h2>This weeks specials!</h2>
-                <input type="button" value="Online menu" className="btn btn-secondary" />
-            </div>
-        </div>
-        </section>
+        <Special/>
+        <Testimonial/>
+        <About/>
         </>
     )
 }

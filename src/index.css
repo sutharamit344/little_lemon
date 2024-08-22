@@ -4,6 +4,7 @@ body{
 
 h1,h2,h3,h4,h5,h6{
   margin: 0;
+  padding: 0;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   white-space: nowrap;
@@ -19,7 +20,8 @@ h2{
 
 p{
   font-size: 18px;
-  line-height: 25px;
+  line-height: 23px;
+  margin: 0;
 }
 
 .text-primary{
@@ -70,19 +72,37 @@ header{
 footer .container{
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .footer-links ul{
   list-style: none;
+  padding-inline-start: 0px;
 }
 
 .footer-links a{
   text-decoration: none;
-  color: black;
   white-space: nowrap;
+  color: white;
 }
 
-footer{
+.footer-links li{
+  margin: 1rem 0;
+}
+
+#website_footer{
   background-color: #495E57;
+  color: white;
+}
+
+#footer_bottom{
+  background-color: #a0ccbf;
+  color: black;
+}
+
+#footer_bottom .container{
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
