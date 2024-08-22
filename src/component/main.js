@@ -1,4 +1,4 @@
-import "./main.css"
+
 import Homapage from "./homepage";
 import Bookingpage from "./booking";
 import { Route,Routes } from "react-router-dom";
