@@ -1,6 +1,17 @@
 import "./booking.css"
+import {useState} from "react"
 
 export default function Bookingpage(){
+    const [formData, setFormdata] = useState(
+        {
+            date:"",
+            time:"",
+            guest: 1,
+            occasion:"",
+            submitTouch:false
+        }
+    )
+
     return(
         <section>
             <div className="container content">
@@ -11,11 +22,11 @@ export default function Bookingpage(){
             <label htmlFor="res_date" >
                 <h3>Date</h3>
             </label>
-            <input type="date" id="res_date" className="form-control"/>
+            <input type="date" id="res_date" className="form-control" value={formData.date} onChange={(e) => { setFormdata({...formData, date: e.target.value})}}/>
             <label htmlFor="res_time">
                 <h3>Time</h3>
             </label>
-                <select id="res_time" className="form-control">
+                <select id="res_time" className="form-control" value={formData.time} onChange={(e) => { setFormdata({...formData, time: e.target.value})}}>
                     <option>17:00</option>
                     <option>18:00</option>
                     <option>19:00</option>
@@ -25,17 +36,17 @@ export default function Bookingpage(){
             <label htmlFor="res_guest">
                 <h3>Guest</h3>
             </label>
-            <input type="number" id="res_guest" className="form-control"/>
-            <label htmlFor="Res_occasion">
+            <input type="number" min="1" max="4" id="res_guest" className="form-control" value={formData.guest} onChange={(e) => { setFormdata({...formData, guest: e.target.value})}}/>
+            <label htmlFor="res_occasion">
                 <h3>Occasion</h3>
             </label>
-                <select id="res_occasion" className="form-control">
+                <select id="res_occasion" className="form-control" value={formData.occasion} onChange={(e) => { setFormdata({...formData, occasion: e.target.value})}}>
                     <option>Birthday</option>
                     <option>Anniversary</option>
                     <option>Angegement</option>
                 </select>
                 <br></br>
-                <input type="submit" id="res_submit" value="Reserve" className="btn btn-secondary"/>
+                <input type="submit" id="res_submit" value="Reserve" className="btn btn-secondary" />
         </form>
         </div>
         </section>

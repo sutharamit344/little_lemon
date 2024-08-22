@@ -35,6 +35,8 @@ p{
   background-color: #495E57;
   color: white;
 }
+
+
 .btn-secondary{
   background-color: #F4CE14;
   color: black;
@@ -47,6 +49,10 @@ p{
   box-shadow: 1px 1px 4px #F4CE14;
 }
 
+.btn-secondary:disabled{
+  background-color: lightgray;
+  box-shadow: 0px 0px 0px #000000;
+}
 .btn{
   padding: 2vmin 4vmin;
   font-size: 18px;
