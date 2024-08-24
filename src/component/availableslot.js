@@ -1,20 +1,23 @@
-
-
 const AvailableTimes = (props) => {
-
-    return(
+    return (
         <>
-        {
-            props.availableSlots.map((slot) => {
+            {props.availableSlots.map((slot) => {
+                const isBookedForSelectedDate = (slot.booking || []).some(
+                    (booking) => booking.date === props.selectedDate
+                );
+
                 return (
-                    <option key={slot.time} disabled={slot.booked ? true : false}>
-                        {slot.time} {slot.booked ? "- Booked" : ""}
+                    <option 
+                        key={slot.time} 
+                        value={slot.time} 
+                        disabled={isBookedForSelectedDate}
+                    >
+                        {slot.time} {isBookedForSelectedDate ? "- Booked" : ""}
                     </option>
-                )
-            })
-        }
+                );
+            })}
         </>
-    )
+    );
 }
 
 export default  AvailableTimes
