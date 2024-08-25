@@ -26,14 +26,8 @@
     margin: 0.5rem 0;
   }
 
-  .booking-list{
-    display: flex;
-  }
 
-  .booking-list{
-    display: grid;
-    grid-template-rows: repeat(4, 25%);
-  }
+  
 .slot-list{
   width: 400px;
   white-space: nowrap;

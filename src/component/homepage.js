@@ -3,8 +3,14 @@ import Special from "./specials";
 import Testimonial from "./testimonial";
 import About from "./about";
 import restaurantFood from "../assets/img/restauranfood.jpg"
+import { useEffect } from "react";
 
-export default function Homapage(){
+export default function Homapage(props){
+
+    useEffect(() => {
+        console.log(props.isConfirm)
+    })
+
     return(
         <>
         <section id="hero-section">

@@ -1,16 +1,9 @@
 
 import "./booking.css"
-import {useState,useReducer} from "react"
+import {useState, useReducer, useEffect} from "react"
+import {useNavigate} from "react-router-dom"
 import AvailableTimes from "./availableslot.js"
 
-const initialState = {
-    slots: [
-        { time: '12:00 PM', booking: [] },
-        { time: '12:30 PM', booking: [] },
-        { time: '1:00 PM', booking: [] },
-        { time: '1:30 PM', booking: [] },
-    ],
-};
 
 function reducer(state, action) {
     const newBooking = {
@@ -40,14 +33,21 @@ function reducer(state, action) {
     }
 }
 
-export default function Bookingpage() {
-    const [state, dispatch] = useReducer(reducer, initialState);
+export default function Bookingpage(props) {
+    const [state, dispatch] = useReducer(reducer, props.initialState);
     const [formData, setFormdata] = useState({
         date: "",
-        time: "12:00 PM",
+        time: "",
         guest: 1,
         occasion: "nothing",
     });
+
+    const navigate = useNavigate()
+
+    useEffect(()=> {
+        console.log(state.slots);
+        props.isConfirm === true && props.bookings(state.slots) && navigate("/bookinglist")
+    },[state])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -70,18 +70,21 @@ export default function Bookingpage() {
         // Clear form after submission
         setFormdata({
         date: "",
-        time: "12:00 PM",
+        time: "",
         guest: 1,
         occasion: "nothing",
         });
+
+        props.onConfirm(true);
     };
+
 
     const isSlotBooked = state.slots.some((slot) => 
         slot.time === formData.time &&
         slot.booking.some((booked) => booked.date === formData.date)
     );
     
-    const isFormValid = formData.date !== "" && formData.guest !== "" && !isSlotBooked;
+    const isFormValid = formData.date !== "" && formData.guest !== "" && !isSlotBooked && formData.time !== "" && formData.time !== "Select time";
     
 
     return (
@@ -111,9 +114,9 @@ export default function Bookingpage() {
                         className="form-control"
                         value={formData.time}
                         onChange={(e) => { setFormdata({ ...formData, time: e.target.value }) }}
-                        disabled={!formData.date}
                     >
-                        <AvailableTimes availableSlots={state.slots} selectedDate={formData.date} />
+                        <option>Select time</option>
+                        {formData.date ? <AvailableTimes availableSlots={state.slots} selectedDate={formData.date} /> : ""}
                     </select>
                     <label htmlFor="res_guest">
                         <h3>Guest</h3>
@@ -152,44 +155,7 @@ export default function Bookingpage() {
                         disabled={!isFormValid}
                     />
                 </form>
-                <BookingList slots={state.slots} />
             </div>
         </section>
     );
 }
-
-const BookingList = ({ slots }) => {
-    return (
-        <section>
-            <div>
-                <header>
-                    <h2>Your Booking</h2>
-                </header>
-                <div className="booking-list">
-                    {slots.map((slot) => (
-                        <div key={slot.time} className="slot">
-                            {(slot.booking || []).length > 0 ? (
-                                <>
-                            <h3>{slot.time}</h3>
-                                <div  className="slot-list">
-                                <ul>
-                                    {slot.booking.map((booking, index) => (
-                                        <li key={index}>
-                                            <strong>Date:</strong> {booking.date} <br />
-                                            <strong>Guests:</strong> {booking.guest} <br />
-                                            <strong>Occasion:</strong> {booking.occasion}
-                                        </li>
-                                    ))}
-                                </ul>
-                                </div></>
-                            ) : (
-                                ""
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-}
-
