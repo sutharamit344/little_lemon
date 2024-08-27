@@ -9,7 +9,7 @@ const BookingList = ({ slots, onConfBooking,  onConfirm}) => {
     })
 
     return (
-        <section>
+        <section style={{minHeight:"50vmin", padding: "2rem 0"}}>
             <div className="container">
                 <header>
                     <h2>Your Booking</h2>

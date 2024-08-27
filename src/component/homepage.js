@@ -4,6 +4,7 @@ import Testimonial from "./testimonial";
 import About from "./about";
 import restaurantFood from "../assets/img/restauranfood.jpg"
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Homapage(props){
 
@@ -22,7 +23,7 @@ export default function Homapage(props){
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
                     </p>
                     <br></br>
-                    <input type="button" value="Reserve a table" className="btn btn-secondary"/>
+                    <Link to="/booking"><button type="button" className="btn btn-secondary">Reserve table now</button></Link>
                 </div>
                 <div id="main-img">
                     <div  id="restaurentfoodimg">

@@ -9,7 +9,7 @@ export default function Special(){
         <div id="highlight-section-content" className="container">
             <header id="highlight-header">
                 <h2>This weeks specials!</h2>
-                <input type="button" value="Online menu" className="btn btn-secondary" />
+                <input type="button" value="View all dishes" className="btn btn-secondary" />
             </header>
             <section id="highlight_content">
                 <article className="highlight_card">

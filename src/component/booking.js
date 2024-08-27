@@ -121,7 +121,7 @@ export default function Bookingpage(props) {
                     <label htmlFor="res_guest">
                         <h3>Guest</h3>
                     </label>
-                    <input
+                    <select
                         type="number"
                         min="1"
                         max="4"
@@ -130,7 +130,14 @@ export default function Bookingpage(props) {
                         className="form-control"
                         value={formData.guest}
                         onChange={(e) => { setFormdata({ ...formData, guest: e.target.value }) }}
-                    />
+                    >
+                        <option>1 Person</option>
+                        <option>2 Person</option>
+                        <option>3 Person</option>
+                        <option>4 Person</option>
+                        <option>50 Person Hallnpn</option>
+                    </select>
+                    <div className="error-msg"></div>
                     <label htmlFor="res_occasion">
                         <h3>Occasion</h3>
                     </label>
